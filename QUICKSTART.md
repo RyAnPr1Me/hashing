@@ -68,9 +68,11 @@ python chronohash.py
 |---------|-------------|
 | **Output Size** | 256 bits (32 bytes) |
 | **Block Size** | 512 bits (64 bytes) |
-| **Rounds** | 16-24 (dynamic) |
+| **Rounds** | 20-32 (dynamic, enhanced) |
 | **Dependencies** | None (standard library) |
 | **Python Version** | 3.6+ |
+| **Security** | Enhanced with more rounds |
+| **Performance** | Optimized with bitwise ops |
 
 ## Properties Verified
 

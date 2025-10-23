@@ -6,9 +6,10 @@ ChronoHash is a novel 256-bit cryptographic hash function designed with unique i
 
 ### 1. **Dynamic Round System**
 Unlike fixed-round algorithms, ChronoHash adapts the number of compression rounds based on input complexity:
-- Base: 16 rounds
-- Additional rounds: Up to 8 extra rounds for high-complexity inputs
+- Base: 20 rounds (enhanced from original 16)
+- Additional rounds: Up to 12 extra rounds for high-complexity inputs (increased from 8)
 - Complexity measured by unique byte distribution
+- Total range: 20-32 rounds for adaptive security
 
 ### 2. **Temporal Diffusion**
 Each byte position influences multiple future positions in a cascading manner:
@@ -114,8 +115,8 @@ The test suite validates:
 
 - **Output Size**: 256 bits (32 bytes)
 - **Block Size**: 512 bits (64 bytes)
-- **Rounds**: 16-24 (dynamic based on input)
-- **Speed**: Comparable to SHA-256 for typical inputs
+- **Rounds**: 20-32 (dynamic, enhanced security)
+- **Speed**: Optimized with bitwise operations for better performance
 
 ### Comparison with SHA-256
 
@@ -123,9 +124,11 @@ The test suite validates:
 |---------|------------|---------|
 | Output Size | 256 bits | 256 bits |
 | Algorithm Type | Novel design | Merkle-Damgård |
-| Rounds | 16-24 (dynamic) | 64 (fixed) |
+| Rounds | 20-32 (dynamic) | 64 (fixed) |
 | Temporal Diffusion | ✅ Yes | ❌ No |
 | Dynamic Rounds | ✅ Yes | ❌ No |
+| Performance | Optimized | Highly optimized |
+| Security Level | Enhanced | NIST Standard |
 | NIST Standard | ❌ No | ✅ Yes |
 | Patent Encumbered | ❌ No | ❌ No |
 

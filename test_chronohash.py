@@ -179,7 +179,7 @@ class TestDynamicRounds(unittest.TestCase):
     def test_base_rounds(self):
         """Test that base rounds are applied."""
         rounds = self.hasher._calculate_dynamic_rounds(b"test")
-        self.assertGreaterEqual(rounds, 16)
+        self.assertGreaterEqual(rounds, 20)  # Updated from 16 to 20
 
 
 class TestPerformance(unittest.TestCase):

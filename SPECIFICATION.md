@@ -21,8 +21,8 @@ ChronoHash is a novel 256-bit cryptographic hash function featuring dynamic roun
 | Output Size | 256 bits | Hash digest length |
 | Block Size | 512 bits | Input processing block |
 | State Size | 256 bits | Internal state (8×32-bit) |
-| Base Rounds | 16 | Minimum compression rounds |
-| Max Rounds | 24 | Maximum compression rounds |
+| Base Rounds | 20 | Minimum compression rounds (enhanced) |
+| Max Rounds | 32 | Maximum compression rounds (enhanced) |
 | Word Size | 32 bits | State element size |
 
 ## 2. Algorithm Structure
@@ -106,17 +106,18 @@ After padding:
 
 ```python
 def calculate_rounds(message):
-    base_rounds = 16
+    base_rounds = 20  # Enhanced from 16
     unique_bytes = count_unique_bytes(message)
     complexity = unique_bytes / 256.0
-    extra_rounds = int(complexity * 8)
+    extra_rounds = int(complexity * 12)  # Enhanced from 8
     return base_rounds + extra_rounds
 ```
 
 **Properties:**
-- Minimum: 16 rounds (empty or low-complexity input)
-- Maximum: 24 rounds (all 256 byte values present)
+- Minimum: 20 rounds (empty or low-complexity input)
+- Maximum: 32 rounds (all 256 byte values present)
 - Adaptive: More unique bytes → more rounds
+- Enhanced security with higher base rounds
 
 ## 5. Core Functions
 
@@ -269,13 +270,14 @@ Output: 5f096278bb74ca721a6c524e9de884b6
 |--------|------------|---------|
 | Output Size | 256 bits | 256 bits |
 | Block Size | 512 bits | 512 bits |
-| Rounds | 16-24 (dynamic) | 64 (fixed) |
+| Rounds | 20-32 (dynamic) | 64 (fixed) |
 | Structure | Novel design | Merkle-Damgård |
 | Temporal Diffusion | Yes | No |
 | Dynamic Rounds | Yes | No |
+| Optimizations | Bitwise operations | Hardware-optimized |
 | Standardized | No | Yes (FIPS 180-4) |
 | Cryptanalysis | Limited | Extensive |
-| Speed (Python) | ~5800 h/s | ~2M h/s (C lib) |
+| Security Level | Enhanced | Proven |
 
 ## 11. Implementation Notes
 
