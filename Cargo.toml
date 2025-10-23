@@ -1,0 +1,28 @@
+[package]
+name = "chronohash"
+version = "1.2.0"
+edition = "2021"
+authors = ["ChronoHash Design Team"]
+description = "A novel cryptographic hash function with dynamic rounds and temporal diffusion"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/RyAnPr1Me/hashing"
+keywords = ["hash", "cryptography", "digest", "checksum"]
+categories = ["cryptography", "algorithms"]
+
+[lib]
+name = "chronohash"
+path = "src/lib.rs"
+
+[[bin]]
+name = "chronohash-cli"
+path = "src/main.rs"
+
+[dependencies]
+
+[dev-dependencies]
+criterion = "0.5"
+hex = "0.4"
+
+[[bench]]
+name = "chronohash_bench"
+harness = false
