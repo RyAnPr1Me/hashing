@@ -1,6 +1,11 @@
 # ChronoHash - A Novel Cryptographic Hash Function
 
-ChronoHash is a novel 256-bit cryptographic hash function designed with unique innovations that differentiate it from traditional algorithms like SHA-256. Version 1.2.0 introduces Fast Mode for high-performance applications achieving ~40,000 hashes/second.
+ChronoHash is a novel 256-bit cryptographic hash function designed with unique innovations that differentiate it from traditional algorithms like SHA-256. Version 1.2.0 introduces Fast Mode for high-performance applications achieving ~40,000 hashes/second in Python and **5.7M+ hashes/second in Rust**.
+
+## 🚀 Implementations
+
+- **Python**: Pure Python implementation (~40K h/s fast mode, ~5.6K h/s normal mode)
+- **Rust**: High-performance Rust implementation (**5.7M+ h/s fast mode**, ~3.2M h/s normal mode) - [See Rust README](README-RUST.md)
 
 ## 🌟 Key Innovations
 
